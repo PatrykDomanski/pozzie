@@ -1,1 +1,2 @@
-<app-user-menu></app-user-menu>
+<app-navigator *ngIf="this.authService.logged"></app-navigator>
+<app-main *ngIf="!this.authService.logged"></app-main>
