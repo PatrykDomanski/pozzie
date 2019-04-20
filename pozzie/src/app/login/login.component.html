@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <span routerLink="/">$ICO pozzie</span>
+
+  <!-- <span class="space-splitter"></span> -->
+
+</mat-toolbar>
+
+<!-- TODO Facebook API key -->
+<mat-card>
+  <mat-card-content>
+    <firebase-ui 
+      (signInSuccessWithAuthResult)="successCallback($event)"
+      (signInFailure)="errorCallback($event)">
+    </firebase-ui>
+  </mat-card-content>
+</mat-card>

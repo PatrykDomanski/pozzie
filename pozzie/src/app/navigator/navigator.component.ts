@@ -11,12 +11,26 @@ import { AuthService } from '../auth.service';
 })
 export class NavigatorComponent {
 
+  // TODO There's probably a better way to do it
+  userInfo = JSON.parse(localStorage['firebaseui::rememberedAccounts'])
+
   isHandset$: Observable<boolean> = this.breakpointObserver
-  .observe(Breakpoints.Handset)
-  .pipe(map(result => result.matches));
+    .observe(Breakpoints.Handset)
+    .pipe(map(result => result.matches)
+  );
 
   constructor(
     private breakpointObserver: BreakpointObserver,
     private authService: AuthService) {}
 
+  signOut() {
+    this.authService.signOut();
+    // this
+  }
+
+  // ngOnInit() {
+  //   const ;
+
+
+  // }
 }

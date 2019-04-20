@@ -1,18 +1,34 @@
 <mat-sidenav-container class="sidenav-container">
+
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
+
     <mat-card class="profile-card">
+
       <mat-card-header>
+          <!-- <img mat-card-avatar 
+              src="../../assets/baseline_account_circle_black_24dp.png"> -->
+
           <img mat-card-avatar 
-              src="../../assets/baseline_account_circle_black_24dp.png">
+            src="{{userInfo[0]['photoUrl']}}">
+              
+
           <mat-card-title routerLink="/profile" routerLinkActive="active">
-              $USERNAME
+            {{userInfo[0]["displayName"]}}
           </mat-card-title>
-          <mat-card-subtitle>$EMAIL</mat-card-subtitle>
+
+          <mat-card-subtitle>
+              {{userInfo[0]["email"]}}
+          </mat-card-subtitle>
+          <!-- <mat-card-footer> -->
+            <button mat-button (click)="signOut()">Logout</button>
+         <!-- </mat-card-footer> -->
       </mat-card-header>
+
     </mat-card>
+
     <mat-nav-list>
       <a mat-list-item>Search</a>
       <a mat-list-item>Forum</a>
@@ -47,11 +63,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>pozzie</span>
-
-      <span class="space-splitter"></span>
-
-      <a mat-raised-button (click)="this.authService.logged = false">$LOGOUT</a>
-
+      <!-- <span class="space-splitter"></span> -->
     </mat-toolbar>
     
     <router-outlet></router-outlet>
