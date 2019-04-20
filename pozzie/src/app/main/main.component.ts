@@ -13,9 +13,4 @@ export class MainComponent implements OnInit {
   ngOnInit() {
   }
 
-  // FIXME
-  log() {
-    this.authService.logged = true;
-  }
-
 }
