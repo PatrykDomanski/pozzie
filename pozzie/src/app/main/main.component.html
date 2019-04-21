@@ -1,37 +1,45 @@
 <!-- <section class="mat-typography"> -->
-  <mat-toolbar color="primary">
+  <mat-toolbar>
     <span>$ICO pozzie</span>
 
     <span class="space-splitter"></span>
 
-    <a mat-raised-button routerLink="register">$REGISTER</a>
-    <a mat-raised-button routerLink="login">$LOGIN</a>
+    <button class="button sign" routerLink="register">Sign Up</button>
+    <button class="button log" routerLink="login">Log In</button>
 
   </mat-toolbar>
 
-  <mat-grid-list cols="2">
-    <mat-grid-tile [colspan]="2">
-      <img src="../../assets/logo.png">
+  <mat-grid-list cols="2" rowHeight="5rem">
+    <mat-grid-tile [colspan]="2" [rowspan]="5" style="background-color: rgb(26, 26, 93); color: rgb(137, 137, 247)">
+      <div class="outer">
+          <img src="../../assets/logo.png" class="logo">
+          <div class="inner">
+              <h1 class="slogan">A free SEO system for everyone!</h1>
+          </div>
+      </div>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="2" style="background-color: deepskyblue">
-      <h1 class="mat-display-3">A free SEO system for everyone!</h1>
+    <mat-grid-tile [colspan]="1" [rowspan]="1" style="background-color: deepskyblue">
+      <h2 class="desc">FEATURES:</h2>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <!-- placeholder -->
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="3">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quae rem nam laboriosam repellat beatae aliquam dolore adipisci pariatur officiis expedita, officia tenetur non aperiam fugit quidem libero odit nihil!
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1">
+    <mat-grid-tile [colspan]="1" [rowspan]="3">
       $PIC.jpg
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1">
+    <mat-grid-tile [colspan]="1" [rowspan]="3">
       $PIC.jpg
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1">
+    <mat-grid-tile [colspan]="1" [rowspan]="3">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quae rem nam laboriosam repellat beatae aliquam dolore adipisci pariatur officiis expedita, officia tenetur non aperiam fugit quidem libero odit nihil!
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1">
+    <mat-grid-tile [colspan]="1" [rowspan]="3">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quae rem nam laboriosam repellat beatae aliquam dolore adipisci pariatur officiis expedita, officia tenetur non aperiam fugit quidem libero odit nihil!
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1">
+    <mat-grid-tile [colspan]="1" [rowspan]="3">
       $PIC.jpg
     </mat-grid-tile>
   </mat-grid-list>
