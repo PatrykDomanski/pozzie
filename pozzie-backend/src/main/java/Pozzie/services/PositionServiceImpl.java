@@ -39,14 +39,16 @@ public class PositionServiceImpl implements PositionService {
     @Override
     public String addPosition(int id, Date date, int position, String url, KeyWord keyword) {
         Position newPosition = new Position();
-        User user = userRepository.findById(id)
+        /*User user = userRepository.findById(id)
                 .orElse(null);
         if(user == null){
             return "Error";
-        }
+        }*/
+        newPosition.setId(id);
         newPosition.setKeyWord(keyword);
         newPosition.setDate(date);
         newPosition.setPosition(position);
+        newPosition.setUrl(url);
         positionsRepository.save(newPosition);
         return "Added";
     }

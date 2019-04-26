@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class KeyWordServiceImpl implements KeyWordService {
@@ -19,7 +21,7 @@ public class KeyWordServiceImpl implements KeyWordService {
     @Override
     public String addKeyword(Project project, String keyword) {
         KeyWord keyWord = new KeyWord();
-        List<Position> positions = new ArrayList<Position>();
+        Set<Position> positions = new HashSet<Position>();
         keyWord.setKeyword(keyword);
         keyWord.setProject(project);
         keyWord.setPositions(positions);
@@ -48,5 +50,10 @@ public class KeyWordServiceImpl implements KeyWordService {
         }*/
         keyWordRepository.deleteById(id);
         return "Deleted";
+    }
+
+    @Override
+    public Iterable<KeyWord> getAllKeywords() {
+        return keyWordRepository.findAll();
     }
 }

@@ -1,7 +1,12 @@
 package Pozzie.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity(name="keyword")
 public class KeyWord {
@@ -11,13 +16,15 @@ public class KeyWord {
 
     @ManyToOne
     @JoinColumn(name = "projectId", referencedColumnName = "id")
+    @JsonIgnore
     private Project project;
 
     @Column(name = "keyword")
     private String keyword;
 
-    @OneToMany(mappedBy = "id")
-    private List<Position> positions;
+    @JsonIgnore
+    @OneToMany(mappedBy = "keyWord")
+    private Set<Position> positions;
 
     public int getId() {
         return id;
@@ -43,11 +50,11 @@ public class KeyWord {
         this.keyword = keyword;
     }
 
-    public List<Position> getPositions() {
+    public Set<Position> getPositions() {
         return positions;
     }
 
-    public void setPositions(List<Position> positions) {
+    public void setPositions(Set<Position> positions) {
         this.positions = positions;
     }
 }

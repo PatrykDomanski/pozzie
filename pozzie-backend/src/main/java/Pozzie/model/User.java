@@ -6,23 +6,20 @@ import java.util.List;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @Column(name = "id")
+    private String id;
 
     @Column(name = "username")
     private String username;
-
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "enabled")
-    private boolean enabled;
 
     @Column(name = "email")
     private String email;
 
     @Column(name = "role")
     private Integer role;
+
+    @Column(name = "name")
+    private String name;
 
     @OneToMany(mappedBy = "id")
     private List<Position> keywords;
@@ -31,11 +28,11 @@ public class User {
     @JoinColumn(name = "projectId", referencedColumnName = "id")
     private Project project;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -45,22 +42,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
     }
 
     public String getEmail() {
@@ -95,5 +76,11 @@ public class User {
         this.project = project;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 }

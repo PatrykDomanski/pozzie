@@ -30,8 +30,6 @@ public class UserController {
         User newUser = new User();
 
         newUser.setUsername(user.getName());
-        newUser.setPassword(user.getPassword());
-        newUser.setEnabled(false);
         newUser.setRole(1);
         userService.addUser(newUser);
         return "supa";

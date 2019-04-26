@@ -51,4 +51,10 @@ public class CheckerController {
     public int getPositionfrom10results(@PathVariable("keyword") String keyword, @PathVariable("url") String url){
         return positionCheckerService.checkPosition(keyword, url);
     }
+
+    @RequestMapping("/check/showAll")
+    @ResponseBody
+    public String getAllKeyWords(){
+        return positionCheckerService.checkAllPositions();
+    }
 }

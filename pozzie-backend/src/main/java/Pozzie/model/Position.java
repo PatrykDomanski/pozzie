@@ -1,5 +1,7 @@
 package Pozzie.model;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,7 +12,7 @@ public class Position {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "keywordId", referencedColumnName = "id")
+    @JoinColumn(name = "keyWord_id", nullable = false)
     private KeyWord keyWord;
 
     @Column(name = "date")
@@ -21,6 +23,8 @@ public class Position {
 
     @Column(name = "url")
     private String url;
+
+    public Position() {}
 
     public KeyWord getKeyWord() {
         return keyWord;

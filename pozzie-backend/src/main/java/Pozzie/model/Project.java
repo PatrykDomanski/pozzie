@@ -1,5 +1,7 @@
 package Pozzie.model;
 
+import org.codehaus.jackson.annotate.JsonManagedReference;
+
 import javax.jws.Oneway;
 import javax.persistence.*;
 import java.util.List;
@@ -19,6 +21,9 @@ public class Project {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "projectUrl")
+    private String projectUrl;
 
     @OneToMany(mappedBy = "project")
     private List<Note> notes;
@@ -61,5 +66,13 @@ public class Project {
 
     public void setNotes(List<Note> notes) {
         this.notes = notes;
+    }
+
+    public String getProjectUrl() {
+        return projectUrl;
+    }
+
+    public void setProjectUrl(String projectUrl) {
+        this.projectUrl = projectUrl;
     }
 }
